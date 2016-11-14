@@ -1,0 +1,45 @@
+{
+  "name": "peacemaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/js/scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "three": "global:THREE",
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.6",
+    "browserify-shim": "^3.8.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-pug": "^3.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
