@@ -16,7 +16,11 @@ html(lang="en")
 		p.test test
 		.container-fluid
 			.row
-				.col-sm-6.red
+				.col-sm-6.red(
+					data-toggle="tooltip"
+					data-placement="top"
+					title="just tooltip"
+				)
 				.col-sm-6.blue
 
 		script(src="js/app.js")

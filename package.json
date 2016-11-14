@@ -35,7 +35,6 @@
     "browserify-shim": "^3.8.12",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-browserify": "^0.5.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-notify": "^2.2.0",
     "gulp-pug": "^3.1.0",

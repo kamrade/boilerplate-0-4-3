@@ -1,21 +1,25 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var browserify = require('browserify');
-var autoprefixer = require('gulp-autoprefixer');
-var pug = require('gulp-pug');
-var uglify = require('gulp-uglify');
-var cleanCSS = require('gulp-clean-css');
 
 var source = require('vinyl-source-stream');
-var gutil = require('gulp-util');
-var buffer = require('vinyl-buffer');
-var notify = require('gulp-notify');
 var watchify = require('watchify');
+var browserify = require('browserify');
 var babelify = require('babelify');
+var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
+
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
+
+var pug = require('gulp-pug');
+
+var gutil = require('gulp-util');
+var notify = require('gulp-notify');
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/styles.sass')
@@ -37,14 +41,6 @@ gulp.task('pug', function() {
 		.pipe(gulp.dest('./public'))
 		.pipe(reload({stream: true}));
 });
-
-// gulp.task('js', function() {
-// 	return gulp.src('app/js/app.js')
-// 		.pipe(browserify())
-// 		// .pipe(uglify())
-// 		.pipe(gulp.dest('./public/js'))
-// 		.pipe(reload({stream: true}));
-// });
 
 function handleErrors() {
 	var args = Array.prototype.slice.call(arguments);
@@ -101,7 +97,6 @@ gulp.task('serve', ['sass', 'pug', 'scripts'], function() {
 	});
 	gulp.watch('app/sass/**/*.*', ['sass']);
 	gulp.watch('app/views/**/*.*', ['pug']);
-	// gulp.watch('app/js/**/*.*', ['js']);
 	return buildScript('app.js', true); // browserify watch for JS changes
 });
 
